@@ -14,7 +14,12 @@
 
   <dimension ref="<%=dimensions%>"/>
   <sheetViews>
-    <sheetView workbookViewId="0"/>
+    <sheetView workbookViewId="0">
+      <!--xSplit attribute represents the no of cols freezed.The value will always be 1 for this case.-->
+      <pane xSplit="1" topLeftCell="B1" activePane="topRight" state="frozen"/>
+      <!-- worksheet view selection to the selected pane-->
+      <selection pane="topRight" activeCell="F18" sqref="F18"/>
+    </sheetView>
   </sheetViews>
   <sheetFormatPr defaultRowHeight="15" x14ac:dyDescent="0.25"/>
   
