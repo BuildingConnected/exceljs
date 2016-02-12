@@ -1,8 +1,11 @@
-# ExcelJS
+# ExcelJS - BC Fork
 
 Read, manipulate and write spreadsheet data and styles to XLSX and JSON.
 
 Reverse engineered from Excel spreadsheet files as a project.
+
+### *EDIT* 
+The Parent sheet xml document is hard coded to have a fixed first column. This was the easiest solution to the rather complex problem of fixing the first column. 
 
 # Installation
 
