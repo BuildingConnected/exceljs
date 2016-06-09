@@ -46,7 +46,6 @@
       <row r="<%=row.number%>"
            <% if(row.height) {%> ht="<%=row.height%>" customHeight="1"<% } %>
            <% if(row.hidden) {%> hidden="1"<% } %>
-           spans="<%=row.min%>:<%=row.max%>"
            <% if (row.styleId) { %> s="<%=row.styleId%>" customFormat="1" <% } %>
            x14ac:dyDescent="0.25">
       <% _.each(row.cells, function(cell){ %>
