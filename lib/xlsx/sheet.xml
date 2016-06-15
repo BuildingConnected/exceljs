@@ -14,12 +14,18 @@
 
   <dimension ref="<%=dimensions%>"/>
   <sheetViews>
-    <sheetView workbookViewId="0">
-      <!--xSplit attribute represents the no of cols freezed.The value will always be 1 for this case.-->
-      <pane xSplit="1" topLeftCell="B1" activePane="topRight" state="frozen"/>
-      <!-- worksheet view selection to the selected pane-->
-      <selection pane="topRight" activeCell="F18" sqref="F18"/>
-    </sheetView>
+    <% if (split) { %>
+      <sheetView workbookViewId="0">
+        <!--xSplit attribute represents the no of cols freezed.-->
+        <pane
+          xSplit="<%=split.split%>"
+          topLeftCell="<%=split.topLeftCell%>"
+          activePane="<%=split.activePane%>"
+          state="<%=split.state%>"/>
+      </sheetView>
+    <% } else { %>
+      <sheetView workbookViewId="0" />
+    <% } %>
   </sheetViews>
   <sheetFormatPr defaultRowHeight="15" x14ac:dyDescent="0.25"/>
   
@@ -40,7 +46,6 @@
       <row r="<%=row.number%>"
            <% if(row.height) {%> ht="<%=row.height%>" customHeight="1"<% } %>
            <% if(row.hidden) {%> hidden="1"<% } %>
-           spans="<%=row.min%>:<%=row.max%>"
            <% if (row.styleId) { %> s="<%=row.styleId%>" customFormat="1" <% } %>
            x14ac:dyDescent="0.25">
       <% _.each(row.cells, function(cell){ %>
