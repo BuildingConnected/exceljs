@@ -16,7 +16,7 @@
   <sheetViews>
     <% if (split) { %>
       <sheetView workbookViewId="0">
-        <!--xSplit attribute represents the no of cols freezed.The value will always be 1 for this case.-->
+        <!--xSplit attribute represents the no of cols freezed.-->
         <pane
           xSplit="<%=split.split%>"
           topLeftCell="<%=split.topLeftCell%>"
